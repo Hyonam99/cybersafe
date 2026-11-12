@@ -1,0 +1,12 @@
+{
+  "name": "cybersafe-ng",
+  "version": "1.0.0",
+  "description": "Offline-first cybersecurity awareness platform for Nigerian secondary school students",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/"
+  },
+  "license": "MIT"
+}

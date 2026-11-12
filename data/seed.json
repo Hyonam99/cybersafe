@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "schools": [
+    { "key": "demo", "name": "Unity Model Secondary School (Demo)", "state": "FCT", "lga": "Bwari" }
+  ],
+  "users": [
+    { "full_name": "Platform Administrator", "username": "admin", "password": "CyberSafe2026", "role": "admin", "school": "demo" },
+    { "full_name": "Mrs. Ngozi Okafor", "username": "teacher", "password": "CyberSafe2026", "role": "teacher", "school": "demo" },
+    { "full_name": "Demo Student", "username": "student", "password": "CyberSafe2026", "role": "student", "school": "demo", "class": "JSS2 Gold" }
+  ],
+  "classes": [
+    { "name": "JSS2 Gold", "level": "JSS2", "join_code": "KPX7QM", "teacher": "teacher", "school": "demo" },
+    { "name": "SS1 Science", "level": "SS1", "join_code": "R4T9WN", "teacher": "teacher", "school": "demo" }
+  ],
+  "badges": [
+    { "code": "FIRST_LESSON", "name": "First Step", "description": "Completed your first lesson.", "criteria": "lessons_completed>=1" },
+    { "code": "PASS_CYBERBULLYING", "name": "Upstander", "description": "Passed the Cyberbullying module.", "criteria": "passed:cyberbullying" },
+    { "code": "PASS_GROOMING", "name": "Safe Connector", "description": "Passed the Online Grooming module.", "criteria": "passed:online-grooming" },
+    { "code": "PASS_PHISHING", "name": "Phish Spotter", "description": "Passed the Phishing module.", "criteria": "passed:phishing" },
+    { "code": "PERFECT_SCORE", "name": "Sharp Mind", "description": "Scored 100% in any quiz.", "criteria": "perfect_score" },
+    { "code": "ALL_MODULES", "name": "CyberSafe Champion", "description": "Passed all three modules.", "criteria": "passed_all" }
+  ],
+  "modules": [
+    {
+      "title": "Cyberbullying",
+      "slug": "cyberbullying",
+      "description": "Learn what cyberbullying looks like, how it hurts, and what you can do when it happens to you or someone else.",
+      "sequence_no": 1,
+      "pass_mark": 70,
+      "lessons": [
+        {
+          "title": "What cyberbullying looks like",
+          "est_minutes": 4,
+          "content": "Cyberbullying is when someone uses a phone, computer or the internet to **hurt, embarrass, threaten or exclude** another person, usually again and again.\n\nIt can happen on WhatsApp, Instagram, TikTok, Snapchat, Facebook, in online games, or by text message.\n\n### Common forms\n- Sending insulting or threatening messages\n- Posting embarrassing photos or videos without permission\n- Editing someone's picture to make fun of them, including fake images made with AI apps\n- Spreading rumours or lies in group chats\n- Creating a fake account to pretend to be someone\n- Deliberately removing someone from a group to make them feel left out\n\n### How it is different from bullying at school\nCyberbullying can follow you home. It can happen at any time of day, the audience can be very large, and posts can be copied and shared long after they were first sent.\n\n> A joke stops being a joke when the other person is hurt by it and it keeps happening."
+        },
+        {
+          "title": "How cyberbullying affects people",
+          "est_minutes": 4,
+          "content": "Cyberbullying is not \"just online\". It affects real feelings and real lives.\n\n### Possible effects on the person targeted\n- Feeling sad, scared, angry or ashamed\n- Not wanting to go to school or see friends\n- Trouble sleeping or concentrating in class\n- Falling grades\n- Feeling alone or hopeless\n\nStudies have found that young people who are cyberbullied are more likely to feel depressed and anxious, and some have thoughts of harming themselves.\n\n### Warning signs in a friend\n- They suddenly stop using their phone, or seem nervous when it buzzes\n- They become quiet, withdrawn or easily upset\n- They avoid school or group activities\n\n> If you notice these signs, check in with your friend privately. Ask: \"Are you okay? I'm here if you want to talk.\""
+        },
+        {
+          "title": "Be an upstander, not a bystander",
+          "est_minutes": 4,
+          "content": "A **bystander** sees bullying and does nothing. An **upstander** sees bullying and does something safe to help.\n\nBullies often want an audience. When others laugh, like, forward or stay silent, the bully feels supported.\n\n### Safe ways to be an upstander\n- **Don't join in.** Don't like, comment on, or forward hurtful posts.\n- **Support the target privately.** Send a kind message so they know they are not alone.\n- **Speak up if it feels safe.** A simple \"This isn't funny, stop it\" can change the group.\n- **Report it** using the app's report button.\n- **Tell a trusted adult**, such as a teacher, counsellor or parent.\n\n> You don't have to be a hero. Even one small action can make a big difference to the person being targeted."
+        },
+        {
+          "title": "Block, save evidence and report",
+          "est_minutes": 5,
+          "content": "If you are being cyberbullied, remember these steps: **Stop, Save, Block, Tell.**\n\n### 1. Stop\nDon't reply or fight back. Replying in anger can make things worse and may get you into trouble too.\n\n### 2. Save\nTake screenshots of the messages, posts and the profile of the person. Note the date and time. This evidence helps adults and platforms take action.\n\n### 3. Block\nBlock the person on the app. You can also mute them, restrict them or leave the group.\n\n### 4. Tell\nTell a trusted adult. You can also use the **Report** option on WhatsApp, Instagram, TikTok, Snapchat or the game you are using.\n\n### Protect yourself in advance\n- Set your accounts to **private**\n- Only accept friend requests from people you know in real life\n- Think before you post: would you be okay if everyone in your school saw it?"
+        },
+        {
+          "title": "Where to get help",
+          "est_minutes": 3,
+          "content": "You never have to deal with cyberbullying alone. Here are people who can help:\n\n- **A parent, guardian or older family member** you trust\n- **Your class teacher or school counsellor**\n- **The platform itself**, using the Report button on the post, message or profile\n- **The Nigeria Police Force National Cybercrime Centre (NPF-NCCC)** for serious threats, blackmail or sharing of private images. Ask an adult to help you make a report.\n- In an emergency, call **112**.\n\n> Telling someone is not \"snitching\". It is the bravest and smartest thing you can do."
+        }
+      ],
+      "scenario": {
+        "lesson_index": 3,
+        "prompt": "A classmate posts an edited photo of you in the class WhatsApp group. People start sending laughing emojis. What do you do?",
+        "options": [
+          { "text": "Post an embarrassing photo of them in the group to get back at them.", "is_best": false, "feedback": "Revenge usually makes the bullying worse and could get you into trouble too. Don't reply in anger." },
+          { "text": "Screenshot the post, leave or mute the group, and tell a teacher or parent.", "is_best": true, "feedback": "Correct! You saved evidence, protected yourself, and told a trusted adult who can help get it removed." },
+          { "text": "Ignore it and hope everyone forgets.", "is_best": false, "feedback": "Ignoring the bully is fine, but you should still save evidence and tell someone. You don't have to handle this alone." },
+          { "text": "Delete WhatsApp and never tell anyone.", "is_best": false, "feedback": "Deleting the app removes the evidence and leaves you dealing with it alone. Save evidence and tell a trusted adult." }
+        ]
+      },
+      "questions": [
+        { "q": "Which of these is an example of cyberbullying?", "options": ["Sending a friend a birthday message", "Repeatedly posting mean comments on someone's photos", "Sharing a school timetable in a group chat", "Asking a classmate for help with homework"], "answer": 1, "explanation": "Cyberbullying is using technology to hurt, embarrass or threaten someone, usually repeatedly.", "difficulty": 1 },
+        { "q": "What does it mean to be an 'upstander'?", "options": ["Someone who watches bullying and laughs", "Someone who sees bullying and takes safe action to help", "Someone who stands up during class", "Someone who bullies others online"], "answer": 1, "explanation": "An upstander does something safe to help, such as supporting the target, reporting, or telling an adult.", "difficulty": 1 },
+        { "q": "You are being bullied online. What should you do FIRST?", "options": ["Reply with an insult", "Stop and don't reply in anger", "Share the messages publicly", "Delete your account immediately"], "answer": 1, "explanation": "Stop, Save, Block, Tell. Replying in anger often makes things worse.", "difficulty": 1 },
+        { "q": "Why should you take screenshots of bullying messages?", "options": ["To share them with more people", "To keep as evidence for adults or the platform", "To post them on your status", "Screenshots are not useful"], "answer": 1, "explanation": "Screenshots are evidence that helps teachers, parents and platforms take action.", "difficulty": 1 },
+        { "q": "How is cyberbullying different from bullying in the school compound?", "options": ["It only happens during school hours", "It can follow you home and reach a large audience", "It is never serious", "It cannot be reported"], "answer": 1, "explanation": "Online bullying can happen any time and posts can be copied and shared widely.", "difficulty": 2 },
+        { "q": "A friend suddenly seems nervous whenever their phone buzzes and stops coming to group activities. What might this be a sign of?", "options": ["They have a new phone", "They might be experiencing cyberbullying", "They are just busy", "Nothing at all"], "answer": 1, "explanation": "Changes in mood and avoiding their phone or friends can be warning signs of cyberbullying.", "difficulty": 2 },
+        { "q": "Which of these is a SAFE way to help someone being bullied online?", "options": ["Forward the hurtful post so others see it", "Send the target a private message of support", "Like the bully's post so they leave you alone", "Join in so you won't be the next target"], "answer": 1, "explanation": "Privately supporting the target shows them they are not alone without putting you at risk.", "difficulty": 1 },
+        { "q": "Someone makes a fake account using your name and photo to post rude things. This is called:", "options": ["Impersonation", "Updating", "Streaming", "Tagging"], "answer": 0, "explanation": "Pretending to be someone online by creating a fake account is impersonation, a form of cyberbullying.", "difficulty": 2 },
+        { "q": "Which setting helps reduce the chance of strangers bullying you online?", "options": ["Making your account public", "Setting your account to private", "Posting your phone number", "Accepting every friend request"], "answer": 1, "explanation": "A private account means only people you approve can see and comment on your posts.", "difficulty": 1 },
+        { "q": "Telling a trusted adult about cyberbullying is:", "options": ["Snitching and should be avoided", "A brave and smart step", "Only for small children", "Pointless"], "answer": 1, "explanation": "Adults can help remove content, contact the school or platform, and support you.", "difficulty": 1 },
+        { "q": "Someone uses an AI app to put your face on an embarrassing picture and shares it. What is the best response?", "options": ["Make a fake picture of them in return", "Save evidence, report the post, and tell a trusted adult", "Laugh it off and share it yourself", "Stop going to school"], "answer": 1, "explanation": "Fake images made to embarrass someone are cyberbullying. Save evidence, report it and get adult help.", "difficulty": 3 },
+        { "q": "Why do bullies often post in group chats instead of private messages?", "options": ["Group chats are cheaper", "They want an audience to support them", "Private messages don't work", "It is required by the app"], "answer": 1, "explanation": "Bullies often want an audience. When nobody laughs or forwards, the bullying loses its power.", "difficulty": 2 },
+        { "q": "Which number can you call in Nigeria in an emergency?", "options": ["112", "419", "000", "123"], "answer": 0, "explanation": "112 is Nigeria's national emergency number.", "difficulty": 2 }
+      ]
+    },
+    {
+      "title": "Online Grooming",
+      "slug": "online-grooming",
+      "description": "Learn how people with bad intentions build trust with young people online, the warning signs, and how to stay safe.",
+      "sequence_no": 2,
+      "pass_mark": 70,
+      "lessons": [
+        {
+          "title": "How groomers build trust",
+          "est_minutes": 5,
+          "content": "**Online grooming** is when someone builds a friendship or relationship with a young person online in order to trick, control or harm them.\n\nGroomers can be strangers or people you know a little. They may pretend to be the same age as you, or be honest about being older but act \"cool\" and understanding.\n\n### Common steps groomers use\n1. **Friendship:** they are very friendly, give you lots of attention and compliments.\n2. **Trust:** they say they understand you better than your parents or friends.\n3. **Gifts:** they offer airtime, data, game credits, money or gifts.\n4. **Isolation:** they ask you to keep the friendship secret and move to a private chat.\n5. **Control:** they ask for photos or personal information, then use it to pressure you.\n\nGrooming can happen quickly. Research has shown that some conversations become dangerous within minutes.\n\n> A real friend never asks you to keep secrets from the adults who care for you."
+        },
+        {
+          "title": "Warning signs: secrets, gifts and private chats",
+          "est_minutes": 4,
+          "content": "Watch out for these **red flags** when talking to anyone online:\n\n- They ask you to **keep your chats secret**\n- They want to move from a game or public app to a **private app** like WhatsApp, Telegram or Snapchat\n- They offer **gifts, airtime, data or money** for no clear reason\n- They ask **personal questions**: where you live, your school, when you are alone at home\n- They ask for **photos**, especially of your body, or send you photos you didn't ask for\n- They make you feel **special and different** from everyone else, or say \"nobody understands you like I do\"\n- They become **angry or threatening** when you say no\n\n> If something makes you feel uncomfortable, confused or scared, trust that feeling. You can stop chatting at any time."
+        },
+        {
+          "title": "Sharing images and sextortion",
+          "est_minutes": 5,
+          "content": "Once a photo or video is sent, **you lose control of it**. It can be saved, screenshotted and shared, even on apps that say messages disappear.\n\n### What is sextortion?\nSextortion is when someone threatens to share private or nude images of you unless you send more images, money or do what they say.\n\nThe person may have tricked you into sending a picture, or may even have created a fake picture of you using AI.\n\n### If this happens\n- **Do not pay or send more.** It rarely stops the threats.\n- **Stop all contact**, but do not delete the chat. Screenshot it as evidence.\n- **Tell a trusted adult immediately.** You will not be in trouble; you are the victim.\n- **Report the account** on the platform.\n- An adult can help you report to the **NPF-NCCC**.\n\n> Sharing sexual images of anyone under 18 is a crime. If it happens to you, it is never your fault."
+        },
+        {
+          "title": "Telling a trusted adult",
+          "est_minutes": 3,
+          "content": "Many young people don't tell anyone because they feel ashamed, scared of getting in trouble, or worried their phone will be taken away.\n\nBut **telling a trusted adult is the most important step** to stay safe.\n\n### Who is a trusted adult?\nSomeone who listens, believes you, and helps you, such as a parent, guardian, aunt or uncle, teacher, school counsellor, or religious leader.\n\n### How to start the conversation\n- \"Can I talk to you about something that happened online?\"\n- \"Someone is making me uncomfortable on [app]. I don't know what to do.\"\n- You can also show them the messages instead of explaining.\n\n### Remember\n- It is **never** your fault if an adult or older person tries to groom you.\n- If the first adult doesn't help, **tell another one**.\n- In an emergency, call **112**."
+        }
+      ],
+      "scenario": {
+        "lesson_index": 1,
+        "prompt": "Someone you met in an online game has been very friendly for weeks. Now they offer you free airtime if you send them a photo and promise not to tell your parents. What do you do?",
+        "options": [
+          { "text": "Send a photo. They've been nice and the airtime is free.", "is_best": false, "feedback": "Gifts plus secrets plus a request for photos are classic grooming red flags. Once a photo is sent, you lose control of it." },
+          { "text": "Refuse, stop chatting, save the messages and tell a trusted adult.", "is_best": true, "feedback": "Correct! You spotted the red flags (gifts, secrecy, photo request), protected yourself, and got help." },
+          { "text": "Ask them to send their own photo first to prove who they are.", "is_best": false, "feedback": "Photos online can be fake. This keeps the conversation going. It's safer to stop and tell an adult." },
+          { "text": "Keep chatting but just don't send the photo.", "is_best": false, "feedback": "Groomers often keep pressuring. The request for secrecy is a warning sign. Stop and tell someone." }
+        ]
+      },
+      "questions": [
+        { "q": "What is online grooming?", "options": ["Learning to style your hair from online videos", "When someone builds trust with a young person online in order to harm or exploit them", "Cleaning up your social media profile", "Playing games with friends online"], "answer": 1, "explanation": "Grooming is building a relationship to trick, control or harm a young person.", "difficulty": 1 },
+        { "q": "Which of these is a red flag when chatting online?", "options": ["Someone asks you to keep your chats secret", "Someone talks about a football match", "Someone shares a funny meme in a public group", "Someone says good morning"], "answer": 0, "explanation": "Asking for secrecy is one of the biggest warning signs of grooming.", "difficulty": 1 },
+        { "q": "Someone you met in a game wants to move your chat to a private app. Why might this be a warning sign?", "options": ["Private apps are always expensive", "It makes it harder for others to see what is happening", "Games don't allow chatting", "It is never a warning sign"], "answer": 1, "explanation": "Groomers move to private channels so parents, moderators and friends can't see the conversation.", "difficulty": 2 },
+        { "q": "An online friend offers you data or airtime for no reason. What should you think?", "options": ["They are just generous", "This could be a way to make you feel you owe them", "You should ask for more", "Accept it and tell nobody"], "answer": 1, "explanation": "Gifts are often used by groomers to build trust and make you feel you owe them something.", "difficulty": 2 },
+        { "q": "What is sextortion?", "options": ["A type of online game", "Threatening to share someone's private images unless they send more or pay", "A school subject", "Selling phones online"], "answer": 1, "explanation": "Sextortion is blackmail using private or fake images.", "difficulty": 2 },
+        { "q": "If someone threatens to share your private photo unless you pay, you should:", "options": ["Pay them quickly so they stop", "Send more photos", "Stop contact, save evidence, and tell a trusted adult", "Delete all the messages and say nothing"], "answer": 2, "explanation": "Paying rarely stops the threats. Save evidence and get adult help immediately.", "difficulty": 2 },
+        { "q": "Once you send a photo online, who controls it?", "options": ["Only you", "The person who received it, and anyone they share it with", "Nobody can see it after it disappears", "Your school"], "answer": 1, "explanation": "Photos can be saved and shared, even on apps where messages 'disappear'.", "difficulty": 1 },
+        { "q": "Which question from an online stranger should worry you most?", "options": ["What's your favourite football club?", "When are you home alone?", "Have you seen the new movie?", "What game do you play?"], "answer": 1, "explanation": "Questions about when you are alone or where you live are about access to you, not friendship.", "difficulty": 2 },
+        { "q": "If an older person grooms a young person online, whose fault is it?", "options": ["The young person's", "Both of them", "The older person's, never the young person's", "Nobody's"], "answer": 2, "explanation": "It is never the young person's fault. The adult is responsible for their actions.", "difficulty": 1 },
+        { "q": "You told an adult something is wrong online and they didn't help. What should you do?", "options": ["Give up", "Tell another trusted adult", "Handle it alone", "Delete your phone"], "answer": 1, "explanation": "If one adult doesn't help, keep telling others until someone does.", "difficulty": 1 },
+        { "q": "Someone says 'Nobody understands you like I do. Your parents are too strict.' This is an example of:", "options": ["A friendly compliment", "Trying to isolate you from people who protect you", "Good advice", "A joke"], "answer": 1, "explanation": "Groomers try to separate young people from parents and friends so they have more control.", "difficulty": 3 },
+        { "q": "Sharing sexual images of anyone under 18 is:", "options": ["Allowed if they agree", "A crime", "Fine on disappearing-message apps", "Only a school rule"], "answer": 1, "explanation": "It is a crime to create or share sexual images of anyone under 18.", "difficulty": 2 }
+      ]
+    },
+    {
+      "title": "Phishing",
+      "slug": "phishing",
+      "description": "Learn how scammers use fake messages, links and offers to steal your passwords and personal information.",
+      "sequence_no": 3,
+      "pass_mark": 70,
+      "lessons": [
+        {
+          "title": "What phishing is",
+          "est_minutes": 4,
+          "content": "**Phishing** is a trick where scammers send fake messages that look like they come from someone you trust, to make you:\n\n- click a dangerous link\n- type in your password or PIN\n- share personal information like your phone number, address or date of birth\n- download a harmful app\n\nThe name comes from \"fishing\": the scammer throws out bait and waits for someone to bite.\n\n### Where phishing happens\n- WhatsApp and Telegram messages\n- SMS text messages\n- Emails\n- Fake pop-ups and adverts on websites\n- Direct messages on Instagram, TikTok or Facebook\n\nEven university students and adults fall for phishing. In one Nigerian university test, about 4 in 10 students opened a fake email and some typed in their passwords."
+        },
+        {
+          "title": "Spotting fake messages and links",
+          "est_minutes": 5,
+          "content": "Most phishing messages have clues. Look for these signs:\n\n### 1. Urgency or fear\n\"Your account will be blocked in 24 hours!\" or \"Act now!\" Scammers rush you so you don't think.\n\n### 2. Too good to be true\nFree data, free money, prizes you never entered for.\n\n### 3. Strange links\nCheck the web address carefully. **mtn-freedata.xyz** or **whatsapp-gold.net** are not real company websites. Look for misspellings like **faceb00k.com**.\n\n### 4. Asking for secrets\nReal banks, schools and telecom companies will **never** ask for your password, PIN or OTP code by message.\n\n### 5. Unknown sender or forwarded many times\nWhatsApp shows \"Forwarded many times\". This is often a sign of a scam chain.\n\n> When in doubt, don't click. Go to the official app or website yourself, or ask an adult."
+        },
+        {
+          "title": "Fake free-data, prize and scholarship offers",
+          "est_minutes": 4,
+          "content": "Scammers know what young Nigerians want, so they create fake offers such as:\n\n- **\"Get 20GB free data from MTN/Airtel/Glo. Click here and share to 10 groups.\"**\n- **\"You have won N50,000 in a promo! Send your account details.\"**\n- **\"Apply for a foreign scholarship. Pay a small processing fee.\"**\n- **\"Join our exam expo group for leaked WAEC/NECO questions.\"**\n\n### Why they are dangerous\n- The link may steal your WhatsApp or social media account\n- You may be asked to pay money you will never get back\n- Your details may be sold or used to scam your friends and family\n- \"Share to 10 groups\" spreads the scam to everyone you know\n\n### Check before you trust\n- Visit the company's **official** website or app\n- Real scholarships do not ask you to pay to apply through WhatsApp\n- Exam \"expo\" is a scam and cheating is illegal"
+        },
+        {
+          "title": "Protecting your passwords and accounts",
+          "est_minutes": 5,
+          "content": "Your passwords are the keys to your online life. Protect them!\n\n### Make strong passwords\n- Use **at least 12 characters**\n- Try a **passphrase**: three or four random words, like *mango-river-kite-42*\n- Don't use your name, birthday, or **123456**\n- Use a **different** password for each important account\n\n### Never share\n- Your password, PIN, or **OTP code**, not even with friends\n- WhatsApp's 6-digit code. If someone asks for it, they are trying to steal your account.\n\n### Turn on two-step verification (2FA)\nThis adds a second lock. Even if someone gets your password, they also need a code from your phone.\n\nOn WhatsApp: **Settings > Account > Two-step verification**.\n\n### If you clicked a bad link\n1. Change your password immediately\n2. Turn on 2FA\n3. Tell an adult\n4. Warn your friends not to click the same message"
+        },
+        {
+          "title": "Where to get help",
+          "est_minutes": 3,
+          "content": "If you think you've been phished or scammed:\n\n- **Tell a parent, guardian or teacher** straight away\n- **Change your passwords** and turn on two-step verification\n- **Report the message** in WhatsApp, Instagram or your email app\n- If money was lost, an adult should contact the **bank** immediately\n- Serious cases can be reported to the **NPF-NCCC** with an adult's help\n\n> Being scammed doesn't mean you are foolish. Scammers are professionals. What matters is acting quickly and telling someone."
+        }
+      ],
+      "scenario": {
+        "lesson_index": 2,
+        "prompt": "You receive a WhatsApp message: \"Congratulations! You have won 10GB free data. Log in here within 1 hour to claim: mtn-bonus-data.xyz\". It was forwarded many times. What do you do?",
+        "options": [
+          { "text": "Click quickly before the hour runs out.", "is_best": false, "feedback": "The time limit is a pressure trick. The strange web address shows it is not the real MTN website." },
+          { "text": "Forward it to your friends so they can also get free data.", "is_best": false, "feedback": "Forwarding spreads the scam to people you care about. 'Forwarded many times' is a warning sign." },
+          { "text": "Don't click. Delete it, report it, and check the official MTN app if you're curious.", "is_best": true, "feedback": "Correct! You spotted the urgency, the fake web address and the too-good-to-be-true offer." },
+          { "text": "Click the link but don't type your password.", "is_best": false, "feedback": "Even clicking can be risky. Some links install harmful apps or track you. It's safer not to click at all." }
+        ]
+      },
+      "questions": [
+        { "q": "What is phishing?", "options": ["A sport played near rivers", "Fake messages designed to trick you into giving information or clicking harmful links", "A way to speed up your phone", "A type of computer game"], "answer": 1, "explanation": "Phishing uses fake messages that look trustworthy to steal information.", "difficulty": 1 },
+        { "q": "Which message is MOST likely to be phishing?", "options": ["'See you at school tomorrow' from a classmate", "'Your account will be blocked in 24 hours. Click here to verify your PIN.'", "Your class timetable from your teacher", "A birthday wish from your aunt"], "answer": 1, "explanation": "Urgency and a request for your PIN are classic phishing signs.", "difficulty": 1 },
+        { "q": "Which web address looks suspicious?", "options": ["www.google.com", "www.faceb00k-login.xyz", "www.waec.org.ng", "www.wikipedia.org"], "answer": 1, "explanation": "Misspellings (zeros instead of o) and unusual endings like .xyz are common signs of fake websites.", "difficulty": 2 },
+        { "q": "Someone on WhatsApp asks for the 6-digit code you just received by SMS. What is happening?", "options": ["They are helping you update WhatsApp", "They are trying to steal your WhatsApp account", "It is a normal security check", "They want to send you data"], "answer": 1, "explanation": "That code lets someone take over your account. Never share it with anyone.", "difficulty": 2 },
+        { "q": "Which is the strongest password?", "options": ["123456", "chinedu2010", "password", "mango-river-kite-42"], "answer": 3, "explanation": "A long passphrase of random words is much harder to guess than names, birthdays or simple numbers.", "difficulty": 1 },
+        { "q": "What does two-step verification (2FA) do?", "options": ["Makes your phone faster", "Adds a second lock so a password alone is not enough to log in", "Deletes your old messages", "Gives you free data"], "answer": 1, "explanation": "2FA requires a second code, so a stolen password alone can't open your account.", "difficulty": 2 },
+        { "q": "A message says 'Share this to 10 groups to receive free data.' What should you do?", "options": ["Share it quickly", "Don't share it; it's a scam that spreads itself", "Share it to only 5 groups", "Reply asking for more data"], "answer": 1, "explanation": "'Share to X groups' is a trick to spread the scam. Telecom companies don't give data this way.", "difficulty": 1 },
+        { "q": "A 'scholarship' on WhatsApp asks you to pay a processing fee. This is:", "options": ["Normal for all scholarships", "Very likely a scam", "A great opportunity", "Required by law"], "answer": 1, "explanation": "Genuine scholarships don't ask you to pay through WhatsApp. Check the official website.", "difficulty": 2 },
+        { "q": "You clicked a bad link and typed your password. What should you do FIRST?", "options": ["Wait and see what happens", "Change your password immediately and turn on 2FA", "Delete the app", "Click the link again"], "answer": 1, "explanation": "Change your password right away and turn on 2FA, then tell an adult.", "difficulty": 2 },
+        { "q": "Who will NEVER ask for your password or PIN by message?", "options": ["Scammers", "Your real bank or telecom company", "Fake promo pages", "Strangers online"], "answer": 1, "explanation": "Real companies never ask for your password, PIN or OTP through a message.", "difficulty": 1 },
+        { "q": "Why do phishing messages often say 'Act now!' or give a short time limit?", "options": ["Because offers really expire fast", "To rush you so you don't stop and think", "Because it's polite", "To help you save time"], "answer": 1, "explanation": "Urgency is a pressure trick to stop you checking whether the message is real.", "difficulty": 2 },
+        { "q": "Should you use the same password for all your accounts?", "options": ["Yes, it's easier to remember", "No, if one is stolen, all your accounts are at risk", "Only for social media", "Yes, if it is long"], "answer": 1, "explanation": "Using different passwords means one leak doesn't unlock everything.", "difficulty": 3 },
+        { "q": "WhatsApp marks a message as 'Forwarded many times'. This means:", "options": ["It is from WhatsApp itself", "It has been shared a lot, which is common for scams and rumours", "It is guaranteed to be true", "It is from your teacher"], "answer": 1, "explanation": "Messages forwarded many times are often chain scams or false information. Be careful.", "difficulty": 3 }
+      ]
+    }
+  ],
+  "demo_students": [
+    { "full_name": "Adaeze Okonkwo", "username": "adaeze_o", "class": "JSS2 Gold", "progress": { "cyberbullying": { "lessons": 5, "scores": [60, 90] }, "online-grooming": { "lessons": 4, "scores": [80] }, "phishing": { "lessons": 2, "scores": [] } } },
+    { "full_name": "Tunde Bakare", "username": "tunde22", "class": "JSS2 Gold", "progress": { "cyberbullying": { "lessons": 5, "scores": [70] }, "online-grooming": { "lessons": 1, "scores": [] } } },
+    { "full_name": "Fatima Bello", "username": "fatimab", "class": "JSS2 Gold", "progress": { "cyberbullying": { "lessons": 5, "scores": [100] }, "online-grooming": { "lessons": 4, "scores": [90] }, "phishing": { "lessons": 5, "scores": [70, 100] } } },
+    { "full_name": "Emeka Nwosu", "username": "emeka_n", "class": "JSS2 Gold", "progress": { "cyberbullying": { "lessons": 3, "scores": [] } } },
+    { "full_name": "Blessing Udo", "username": "blessing_u", "class": "JSS2 Gold", "progress": { "cyberbullying": { "lessons": 5, "scores": [50, 60] } } },
+    { "full_name": "Ibrahim Musa", "username": "ibrahim_m", "class": "SS1 Science", "progress": { "cyberbullying": { "lessons": 5, "scores": [80] }, "online-grooming": { "lessons": 4, "scores": [70] } } },
+    { "full_name": "Chiamaka Eze", "username": "chiamaka_e", "class": "SS1 Science", "progress": {} }
+  ]
+}

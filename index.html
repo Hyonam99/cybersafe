@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberSafe NG</title>
+  <meta name="description" content="Cybersecurity awareness lessons and quizzes for Nigerian secondary school students. Works offline.">
+  <meta name="theme-color" content="#0b6b47">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#/">
+        <img src="icons/icon.svg" alt="" width="32" height="32">
+        <span>CyberSafe <b>NG</b></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" data-act="toggle-nav">Menu</button>
+      <nav id="nav" aria-label="Main"></nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="wrap loading" id="boot">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Preparing your lessons…</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p><span class="net" id="net"></span> Your progress is saved on this device.</p>
+      <button class="link-btn" data-act="reset-demo">Reset data</button>
+    </div>
+  </footer>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="js/vendor/sql-wasm.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
