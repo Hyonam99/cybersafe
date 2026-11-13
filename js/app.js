@@ -180,37 +180,100 @@ function afterRender() {
 // ---------- Public pages ----------
 
 function viewHome() {
-  const mods = db.all('SELECT title, slug, description FROM modules WHERE is_published = 1 ORDER BY sequence_no');
+  const mods = db.all(`SELECT m.title, m.slug, m.description,
+      (SELECT COUNT(*) FROM lessons l WHERE l.module_id = m.module_id) AS lessons
+    FROM modules m WHERE m.is_published = 1 ORDER BY m.sequence_no`);
+  const count = sql => db.get(sql)?.n ?? 0;
+  const lessons = count('SELECT COUNT(*) AS n FROM lessons JOIN modules USING (module_id) WHERE is_published = 1');
+  const scenarios = count('SELECT COUNT(*) AS n FROM scenarios JOIN lessons USING (lesson_id) JOIN modules USING (module_id) WHERE is_published = 1');
+  const questions = count('SELECT COUNT(*) AS n FROM questions JOIN modules USING (module_id) WHERE is_published = 1');
+  const cta = me ? `<a class="btn" href="#${home(me)}">Go to my dashboard</a>`
+    : `<a class="btn" href="#/register">Join your class</a><a class="btn secondary" href="#/login">Log in</a>`;
+  const flag = (text, why) => `<button type="button" class="flag" data-act="flag" data-why="${esc(why)}">${text}</button>`;
   return `
-  <section class="hero">
+  <section class="landing-hero full" data-title="Stay safe online">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">For JSS and SS students in Nigeria</p>
+        <h1>Think before<br>you <span class="hl">tap.</span></h1>
+        <p class="lead">Scammers, groomers and bullies are online every day. Learn to spot them with short lessons, real Nigerian scenarios and quick quizzes.</p>
+        <div class="row">${cta}</div>
+        <p class="hero-note">Free · Works offline · No email needed</p>
+      </div>
+      <div class="phone" role="img" aria-label="Three example messages: a fake prize, a stranger asking for secrets, and a bullying post">
+        <div class="phone-top"><span></span></div>
+        <div class="msg"><small>Unknown number</small>You have won ₦50,000 airtime!! Claim now 👉 bit.ly/fr33-cash</div>
+        <span class="tag t0">Phishing</span>
+        <div class="msg"><small>New friend</small>You are so mature for your age. Don't tell your parents we talk 🤫</div>
+        <span class="tag t1">Grooming</span>
+        <div class="msg"><small>SS2 Gist group</small>Everybody has seen your photo 😂😂 share it more</div>
+        <span class="tag t2">Cyberbullying</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts full">
+    <div class="wrap fact-row">
+      <div><b>${mods.length}</b><span>modules</span></div>
+      <div><b>${lessons}</b><span>short lessons</span></div>
+      <div><b>${scenarios}</b><span>real-life scenarios</span></div>
+      <div><b>${questions}</b><span>quiz questions</span></div>
+    </div>
+  </section>
+
+  <section class="section spot">
     <div>
-      <h1>Stay safe online. Help your friends do the same.</h1>
-      <p>Short lessons, real-life Nigerian scenarios and quizzes on cyberbullying, online grooming and phishing, made for JSS and SS students.</p>
-      <div class="row">${me ? `<a class="btn" href="#${home(me)}">Go to my dashboard</a>` : `<a class="btn" href="#/register">Join your class</a><a class="btn secondary" href="#/login">Log in</a>`}</div>
+      <p class="eyebrow dark">Try it now</p>
+      <h2 class="big">Can you spot the scam?</h2>
+      <p class="muted">This message has <strong>3 red flags</strong>. Tap the parts that look wrong.</p>
+      <p class="spot-score" id="spot-score" aria-live="polite">0 of 3 found</p>
+      <ul class="spot-found" id="spot-found"></ul>
+      <button type="button" class="link-btn" data-act="flag-all">Show me the answers</button>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg width="240" height="240" viewBox="0 0 240 240"><circle cx="120" cy="120" r="110" fill="#ffffff" opacity=".08"/><path d="M120 30 190 58v54c0 50-34 84-70 98-36-14-70-48-70-98V58z" fill="#ffffff" opacity=".95"/><path d="M120 46 176 68v44c0 41-27 69-56 81-29-12-56-40-56-81V68z" fill="#0b6b47"/><path d="m92 118 20 20 38-42" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="sms">
+      <div class="sms-head"><span class="avatar" aria-hidden="true">?</span><div><strong>+234 901 ••• ••21</strong><br><span class="small muted">Text message · now</span></div></div>
+      <p class="sms-body">${flag('URGENT!! Your exam result has been withheld.', 'Panic words like URGENT!! are used to make you act before you think.')}
+        Pay ₦2,500 ${flag('within 1 hour', 'A short deadline is pressure, not a real rule.')} to release it at
+        ${flag('exam-results-ng.xyz/pay', 'A strange web address. Real exam bodies only use their official website.')}</p>
     </div>
   </section>
+
   <section class="section">
-    <h2>What you will learn</h2>
-    <div class="cards">${mods.map(m => `
-      <article class="card module-card"><div class="icon">${ICONS[m.slug] || ICONS.lock}</div><h3>${esc(m.title)}</h3><p class="muted">${esc(m.description)}</p></article>`).join('')}
-    </div>
-  </section>
-  <section class="section">
-    <h2>How it works</h2>
-    <ol class="steps">
-      <li><strong>Join your class</strong><br><span class="muted">Register with the six-character join code from your teacher.</span></li>
-      <li><strong>Read and practise</strong><br><span class="muted">Work through short lessons and decide what to do in real situations.</span></li>
-      <li><strong>Take the quiz</strong><br><span class="muted">Score 70% or more to pass and unlock the next module.</span></li>
-      <li><strong>Earn badges</strong><br><span class="muted">Track your progress. Your teacher sees how the class is doing.</span></li>
+    <p class="eyebrow dark">The course</p>
+    <h2 class="big">${mods.length === 3 ? 'Three modules. One safer you.' : 'What you will learn'}</h2>
+    <ol class="path">${mods.map((m, i) => `
+      <li class="path-card c${i % 3}">
+        <div class="path-top"><span class="num">${String(i + 1).padStart(2, '0')}</span><div class="icon">${ICONS[m.slug] || ICONS.lock}</div></div>
+        <h3>${esc(m.title)}</h3>
+        <p class="muted">${esc(m.description)}</p>
+        <p class="path-meta">${m.lessons} lessons · quiz · badge</p>
+        <p class="path-next small">${i < mods.length - 1 ? 'Pass with 70% to unlock the next module →' : 'Finish them all to earn every badge ★'}</p>
+      </li>`).join('')}
     </ol>
   </section>
-  <section class="section offline-note">
-    ${ICONS.offline}
-    <div><h2>Works without good internet</h2>
-    <p class="muted" style="margin:0">After the first visit, CyberSafe NG runs offline. Lessons, quizzes and your progress are saved on this device, so poor network or expensive data will not stop you learning. A school can also run it from one computer as a local server for the whole computer lab.</p></div>
+
+  <section class="section split">
+    <div class="panel">
+      ${ICONS.offline}
+      <h2>Made for bad network days</h2>
+      <p>After the first visit, CyberSafe NG works with no internet at all. Lessons, quizzes and progress stay on the device, so poor network or costly data will not stop you. A school can also run it from one computer for the whole computer lab.</p>
+    </div>
+    <div class="panel teacher">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+      <h2>For teachers</h2>
+      <ul>
+        <li>Create a class and share a six-character join code</li>
+        <li>See who has finished each module, and their scores</li>
+        <li>Download or print class reports</li>
+        <li>Reset a student's forgotten password</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section closing">
+    <h2>One tap can cost a lot. One lesson can save it.</h2>
+    <p>Get your class join code from your teacher and start today.</p>
+    <div class="row">${cta}</div>
   </section>`;
 }
 
@@ -711,6 +774,16 @@ const forms = {
 const acts = {
   'toggle-nav'(el) { const open = $('#nav').classList.toggle('open'); el.setAttribute('aria-expanded', open); },
   logout() { session.set(null); quizState.set(null); go('/'); },
+  flag(el) {
+    if (el.classList.contains('found')) return;
+    el.classList.add('found');
+    const li = document.createElement('li');
+    li.textContent = el.dataset.why;
+    $('#spot-found').append(li);
+    const n = document.querySelectorAll('.flag.found').length, all = document.querySelectorAll('.flag').length;
+    $('#spot-score').textContent = n === all ? `All ${all} found. Well done!` : `${n} of ${all} found`;
+  },
+  'flag-all'() { document.querySelectorAll('.flag:not(.found)').forEach(acts.flag); },
   'fill-login'(el) {
     const f = $('form[data-form="login"]');
     f.username.value = el.dataset.u; f.password.value = el.dataset.p; f.querySelector('button').focus();
