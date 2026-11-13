@@ -210,6 +210,7 @@ function viewHome() {
         <span class="tag t2">Cyberbullying</span>
       </div>
     </div>
+    <p class="photo-credit">Photo: <a href="https://unsplash.com/photos/VC6MGt9ZoBA" target="_blank" rel="noopener">Emmanuel Ikwuegbu / Unsplash</a></p>
   </section>
 
   <section class="facts full">
@@ -270,10 +271,16 @@ function viewHome() {
     </div>
   </section>
 
-  <section class="section closing">
-    <h2>One tap can cost a lot. One lesson can save it.</h2>
-    <p>Get your class join code from your teacher and start today.</p>
-    <div class="row">${cta}</div>
+  <section class="section closing with-photo">
+    <figure>
+      <img src="images/students.jpg" alt="Three secondary school girls in blue and white uniforms sitting together outdoors, reading their notes" loading="lazy">
+      <figcaption>Photo: <a href="https://unsplash.com/photos/4wcryjJfC0M" target="_blank" rel="noopener">Francis Tokede / Unsplash</a></figcaption>
+    </figure>
+    <div class="closing-text">
+      <h2>One tap can cost a lot. One lesson can save it.</h2>
+      <p>Get your class join code from your teacher and start today.</p>
+      <div class="row">${cta}</div>
+    </div>
   </section>`;
 }
 

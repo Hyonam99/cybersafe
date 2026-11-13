@@ -122,8 +122,11 @@ body { overflow-x: clip; }
 h2.big { font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: -.02em; }
 
 .landing-hero { margin-top: -28px; color: #fff; padding: clamp(40px, 8vw, 88px) 0 clamp(48px, 8vw, 96px);
-  background: radial-gradient(circle at 80% 20%, rgba(110, 140, 255, .16), transparent 45%),
-    radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px) 0 0 / 22px 22px, #0d1421; }
+  position: relative; isolation: isolate;
+  background: linear-gradient(100deg, rgba(4, 34, 22, .94) 0%, rgba(5, 42, 27, .86) 45%, rgba(6, 48, 31, .72) 100%),
+    url(../images/hero-class.jpg) center 35% / cover no-repeat, #06281b; }
+.photo-credit { position: absolute; right: 12px; bottom: 8px; font-size: .72rem; color: rgba(255, 255, 255, .55); margin: 0; }
+.photo-credit a { color: inherit; }
 .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
 .landing-hero h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); line-height: 1.02; letter-spacing: -.035em; margin-bottom: 20px; }
 .hl { color: #0d1421; background: #f5b400; padding: 0 .15em; border-radius: 8px; display: inline-block; transform: rotate(-2deg); }
@@ -194,6 +197,15 @@ h2.big { font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: -.02em; }
 .closing .row { justify-content: center; }
 .closing .btn { background: #2fd08a; color: #06281b; }
 .closing .btn.secondary { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .5); }
+.closing.with-photo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); align-items: stretch; padding: 0; overflow: hidden; text-align: left; }
+.closing.with-photo figure { margin: 0; position: relative; min-height: 300px; }
+.closing.with-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.closing.with-photo figcaption { position: absolute; left: 12px; bottom: 8px; font-size: .72rem; color: rgba(255, 255, 255, .8); text-shadow: 0 1px 3px rgba(0, 0, 0, .6); }
+.closing.with-photo figcaption a { color: inherit; }
+.closing.with-photo .closing-text { padding: clamp(28px, 5vw, 56px); align-self: center; }
+.closing.with-photo h2 { margin: 0 0 10px; }
+.closing.with-photo .row { justify-content: flex-start; }
+@media (max-width: 760px) { .closing.with-photo { grid-template-columns: 1fr; } .closing.with-photo figure { min-height: 240px; } }
 
 /* Auth */
 .auth { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; max-width: 860px; margin: 0 auto; }

@@ -1,7 +1,7 @@
 // Service worker: keeps a copy of the app on the device so it opens and runs offline.
-const CACHE = 'cybersafe-ng-v6';
+const CACHE = 'cybersafe-ng-v7';
 const SHELL = [
-  './', 'index.html', 'css/styles.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png',
+  './', 'index.html', 'css/styles.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'images/hero-class.jpg', 'images/students.jpg',
   'data/seed.json', 'js/app.js', 'js/db.js', 'js/vendor/sql-wasm.js', 'js/vendor/sql-wasm.wasm',
   'js/services/auth.js', 'js/services/content.js', 'js/services/crypto.js', 'js/services/errors.js',
   'js/services/progress.js', 'js/services/quiz.js', 'js/services/teacher.js', 'js/services/admin.js',
